@@ -15,8 +15,18 @@ npm install --save hsl-regex
 ```javascript
 var hslRegex = require('hsl-regex');
 
-hslRegex().test('hsl(123, 45%, 67%)');  // => true
-hslRegex().test('foo bar');  // => false
+hslRegex({ exact: true }).test('hsl(123, 45%, 67%)');  // => true
+hslRegex({ exact: true }).test('foo bar');  // => false
+
+hslRegex({ exact: true }).exec('hsl(1, 1.111%, 1.1111%)');
+// => [
+//  'hsl(1, 1.111%, 1.1111%)',
+//  '1',
+//  '1.111%',
+//  '1.1111%',
+//  index: 0,
+//  input: 'hsl(1, 1.111%, 1.1111%)'
+// ]
 ```
 
 ## License

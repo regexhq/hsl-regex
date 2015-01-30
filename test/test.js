@@ -4,12 +4,15 @@ var hslRegex = require('..');
 var hslStrings = [
   'hsl(111, 12.343%, 0.9%)',
   'hsl(123, 45%, 67%)',
-  'hsl(1, 1.111%, 1.1111%)'
+  'hsl(1, 1.111%, 1.1111%)',
+  'hsl(1, .111%, .1111%)'
 ];
 
 var invalidHslStrings= [
   'hsl(,,,)',
-  'hsl(12,,)'
+  'hsl(12,,)',
+  'hsl(1, 1.111%, 1.1111%) ',
+  '   hsl(1, 1.111%, 1.1111%)'
 ];
 
 describe('hsl-regex', function() {
