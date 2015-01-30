@@ -2,7 +2,7 @@
   "name": "hsl-regex",
   "description": "Regex for matching HSL colors.",
   "author": "John Otander",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -15,7 +15,11 @@
     "url": "https://github.com/regexps/hsl-regex.git"
   },
   "keywords": [
-
+    "hsl",
+    "regex",
+    "regexp",
+    "color",
+    "css"
   ],
   "license": "MIT",
   "bugs": {
