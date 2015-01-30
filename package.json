@@ -12,16 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/johnotander/hsl-regex.git"
+    "url": "https://github.com/regexps/hsl-regex.git"
   },
   "keywords": [
 
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/johnotander/hsl-regex/issues"
+    "url": "https://github.com/regexps/hsl-regex/issues"
   },
-  "homepage": "https://github.com/johnotander/hsl-regex",
+  "homepage": "https://github.com/regexps/hsl-regex",
   "dependencies": {},
   "devDependencies": {
     "mocha": "*"
