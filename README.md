@@ -1,6 +1,6 @@
 # hsl-regex
 
-[![Build Status](https://secure.travis-ci.org/johnotander/hsl-regex.png?branch=master)](https://travis-ci.org/johnotander/hsl-regex)
+[![Build Status](https://secure.travis-ci.org/regexps/hsl-regex.png?branch=master)](https://travis-ci.org/regexps/hsl-regex)
 
 Regex for matching HSL colors.
 
@@ -15,7 +15,8 @@ npm install --save hsl-regex
 ```javascript
 var hslRegex = require('hsl-regex');
 
-hslRegex();  // => true
+hslRegex().test('hsl(123, 45%, 67%)');  // => true
+hslRegex().test('foo bar');  // => false
 ```
 
 ## License
