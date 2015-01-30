@@ -27,6 +27,9 @@ hslRegex({ exact: true }).exec('hsl(1, 1.111%, 1.1111%)');
 //  index: 0,
 //  input: 'hsl(1, 1.111%, 1.1111%)'
 // ]
+
+'hsl(123, 45%, 67%) cats and dogs'.match(hslRegex());
+// = ['hsl(123, 45%, 67%)']
 ```
 
 ## License
