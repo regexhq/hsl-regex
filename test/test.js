@@ -8,11 +8,12 @@ var hslStrings = [
   'hsl(1, .111%, .1111%)'
 ];
 
-var invalidHslStrings= [
+var inexactHslStrings = [
   'hsl(,,,)',
   'hsl(12,,)',
   'hsl(1, 1.111%, 1.1111%) ',
-  '   hsl(1, 1.111%, 1.1111%)'
+  '   hSl(1, 1.111%, 1.1111%)',
+  'hsla(1, .111%, .1111%, .9)'
 ];
 
 describe('hsl-regex', function() {
@@ -25,10 +26,27 @@ describe('hsl-regex', function() {
       });
     });
 
-    it('should return a regex that does not matche invalid hsl strings', function() {
-      invalidHslStrings.forEach(function(invalidHsl) {
+    it('should return a regex that does not match invalid hsl strings', function() {
+      inexactHslStrings.forEach(function(invalidHsl) {
         assert.ok(!hslRegex({ exact: true }).test(invalidHsl));
       });
+    });
+  });
+
+  describe('g', function() {
+
+    it('should match hsl strings', function() {
+      assert.deepEqual(
+        hslStrings.join('foobar').match(hslRegex()),
+        hslStrings
+      )
+    });
+
+    it('should not match non hsl strings', function() {
+      assert.deepEqual(
+        inexactHslStrings.join('foobar').match(hslRegex()),
+        ['hsl(1, 1.111%, 1.1111%)', 'hSl(1, 1.111%, 1.1111%)']
+      );
     });
   });
 });
